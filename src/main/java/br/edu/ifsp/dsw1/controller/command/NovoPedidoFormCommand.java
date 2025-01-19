@@ -12,7 +12,7 @@ public class NovoPedidoFormCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		return "/logged/novoPedido.jsp";
+		return "logged/novoPedido.jsp";
 	}
 
 }

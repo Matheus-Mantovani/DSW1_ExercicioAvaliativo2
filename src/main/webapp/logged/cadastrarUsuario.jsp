@@ -23,7 +23,7 @@
 		<input type="text" name="novoLogin" id="nome"><br>
 		
 		<label for="senha">Senha</label>
-		<input type="text" name="novaSenha" id="senha"><br><br>
+		<input type="password" name="novaSenha" id="senha"><br><br>
 		
 		<button type="submit">Cadastrar usuário</button>
 	</form>

@@ -6,6 +6,7 @@ import br.edu.ifsp.dsw1.controller.command.AtualizarPedidoCommand;
 import br.edu.ifsp.dsw1.controller.command.CadastrarUsuarioCommand;
 import br.edu.ifsp.dsw1.controller.command.CadastrarUsuarioFormCommand;
 import br.edu.ifsp.dsw1.controller.command.Command;
+import br.edu.ifsp.dsw1.controller.command.ErroCommand;
 import br.edu.ifsp.dsw1.controller.command.GerenciarPedidosCommand;
 import br.edu.ifsp.dsw1.controller.command.IndexCommand;
 import br.edu.ifsp.dsw1.controller.command.LoggedCommand;
@@ -56,6 +57,8 @@ public class ControllerServlet extends HttpServlet {
     		command = new CadastrarUsuarioFormCommand();
     	} else if("novoPedidoForm".equals(action)) {
     		command = new NovoPedidoFormCommand();
+    	} else {
+    		command = new ErroCommand();
     	}
     	
     	String view = command.execute(request, response);

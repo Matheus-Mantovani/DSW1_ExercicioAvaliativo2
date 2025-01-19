@@ -11,7 +11,17 @@ public class Pedido {
 	public Pedido() {
 		super();
 	}
-
+	
+	//construtor usado pelo command
+	public Pedido(String nomeCliente, String enderecoEntrega, double valor, String descricao) {
+		super();
+		this.nomeCliente = nomeCliente;
+		this.enderecoEntrega = enderecoEntrega;
+		this.valor = valor;
+		this.descricao = descricao;
+	}
+	
+	//construtor usado pelo dao
 	public Pedido(int idPedido, String nomeCliente, String enderecoEntrega, double valor, String descricao) {
 		super();
 		this.idPedido = idPedido;

@@ -22,7 +22,7 @@
 		<input type="text" name="login" id="nome"><br>
 		
 		<label for="senha">Senha</label>
-		<input type="text" name="senha" id="senha"><br><br>
+		<input type="password" name="senha" id="senha"><br><br>
 		
 		<button type="submit">Enviar</button>
 	</form>
