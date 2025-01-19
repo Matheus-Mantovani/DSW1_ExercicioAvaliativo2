@@ -9,14 +9,13 @@ import br.edu.ifsp.dsw1.model.entity.Pedido;
 
 public class PedidosDaoImpl implements PedidosDao{
 	private static final String CREATE_TABLE = "CREATE TABLE pedidos ("
-									+ "    idpedidos NUMBER NOT NULL UNIQUE,"
+									+ "    idpedidos INT AUTO_INCREMENT PRIMARY KEY,"
 									+ "    nomeCliente VARCHAR(145) NOT NULL,"
 									+ "    enderecoEntrega VARCHAR(200) NOT NULL,"
-									+ "    valor NUMBER(10,2) NOT NULL,"
+									+ "    valor DECIMAL(10,2) NOT NULL,"
 									+ "    descricao VARCHAR(300)"
 									+ ");";
-	private static final String INSERT = "INSERT INTO pedidos (idpedidos, nomeCliente, enderecoEntrega, valor, descricao)"
-									+ " VALUES (seq_id_pedidos.NEXTVAL, ?, ?, ?, ?)";
+	private static final String INSERT = "INSERT INTO pedidos (nomeCliente, enderecoEntrega, valor, descricao) VALUES (?, ?, ?, ?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM pedidos WHERE idpedidos = ?";
 	private static final String SELECT_BY_NOME_CLIENTE = "SELECT * FROM pedidos WHERE nomeCliente = ?";
 	private static final String SELECT_ALL = "SELECT * from pedidos";

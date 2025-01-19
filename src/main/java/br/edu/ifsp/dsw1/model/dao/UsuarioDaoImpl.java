@@ -8,9 +8,10 @@ import br.edu.ifsp.dsw1.model.entity.Usuario;
 public class UsuarioDaoImpl implements UsuarioDao{
 	
 	private static final String CREATE_TABLE = "CREATE TABLE usuario ("
-			+ "    login VARCHAR(50) NOT NULL UNIQUE,"
-			+ "    senha VARCHAR(45) NOT NULL"
-			+ ");";
+									+ "    login VARCHAR(50) NOT NULL UNIQUE,"
+									+ "    senha VARCHAR(45) NOT NULL,"
+									+ "    PRIMARY KEY (login)"
+									+ ");";
 	private static final String INSERT = "INSERT INTO usuario (login, senha) VALUES (?, ?)";
 	private static final String SELECT_BY_LOGIN = "SELECT login, senha FROM usuario WHERE login = ?";
 	
