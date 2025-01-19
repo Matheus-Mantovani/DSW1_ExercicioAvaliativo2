@@ -12,7 +12,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 			+ "    senha VARCHAR(45) NOT NULL"
 			+ ");";
 	private static final String INSERT = "INSERT INTO usuario (login, senha) VALUES (?, ?)";
-	private static final String SELECT_BY_LOGIN = "SELECT * FROM usuario WHERE login = ?";
+	private static final String SELECT_BY_LOGIN = "SELECT login, senha FROM usuario WHERE login = ?";
 	
 
 	@Override
@@ -46,7 +46,6 @@ public class UsuarioDaoImpl implements UsuarioDao{
 			if(resultSet.next()) {
 				usuario = new Usuario(resultSet.getString("login"), resultSet.getString("senha"));
 			}
-			
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
