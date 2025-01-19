@@ -25,7 +25,7 @@ public class RemoverPedidoCommand implements Command {
 		
 		request.setAttribute("mensagem", mensagem);
 		
-		return "controller.do?action=gerenciarPedidos";
+		return "logged.do?action=gerenciarPedidos";
 	}
 
 }

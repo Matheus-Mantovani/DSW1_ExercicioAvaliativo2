@@ -19,7 +19,7 @@
 		<%=mensagem %>
 	<%} %>
 	
-	<form action="controller.do?action=novoPedido" method="post">
+	<form action="logged.do?action=novoPedido" method="post">
 		<label for="nomeCliente">Nome do Cliente</label>
 		<input type="text" name="nomeCliente" id="nomeCliente" required><br><br>
 		

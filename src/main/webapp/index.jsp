@@ -17,7 +17,7 @@
 		<%=mensagem %>
 	<%} %>
 	
-	<form action="controller.do?action=login" method="post">
+	<form action="front.do?action=login" method="post">
 		<label for="nome">Nome</label>
 		<input type="text" name="login" id="nome"><br>
 		

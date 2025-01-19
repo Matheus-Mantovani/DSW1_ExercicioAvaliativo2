@@ -18,7 +18,7 @@
 		<%=mensagem %>
 	<%} %>
 
-	<form action="controller.do?action=cadastrarUsuario" method="post">
+	<form action="logged.do?action=cadastrarUsuario" method="post">
 		<label for="nome">Nome</label>
 		<input type="text" name="novoLogin" id="nome"><br>
 		

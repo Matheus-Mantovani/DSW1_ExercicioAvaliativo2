@@ -25,10 +25,10 @@ public class LoginCommand implements Command{
 			var session = request.getSession(true);
 			session.setAttribute("usuario", usuario);
 			session.setMaxInactiveInterval(60 * 60 * 24);
-			view = "controller.do?action=logged";
+			view = "logged.do?action=logged";
 		} else {
 			request.setAttribute("mensagem", "Usuário não encontrado.");
-			view = "controller.do?action=index";
+			view = "front.do?action=index";
 		}
 		
 		return view;

@@ -8,6 +8,6 @@
 </head>
 <body>
 	<p>Página não encontrada</p>
-	<a href="controller.do?action=logged">Voltar à home</a>
+	<a href="logged.do?action=logged">Voltar à home</a>
 </body>
 </html>

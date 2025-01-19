@@ -22,7 +22,7 @@
 		<%=mensagem %>
 	<%} %>
 	
-	<%if(pedidos != null) {%>
+	<%if(pedidos.size() > 0) {%>
 		<table>
 			<thead>
 				<tr>
@@ -45,8 +45,8 @@
 					<td><%= pedido.getValor() %></td>
 					<td><%= pedido.getDescricao() %></td>
 					<td>
-						<a href="controller.do?action=atualizarPedidoForm&id=<%=pedido.getIdPedido()%>" >Atualizar</a>
-						<a href="controller.do?action=removerPedido&id=<%=pedido.getIdPedido()%>" >Remover</a>
+						<a href="logged.do?action=atualizarPedidoForm&id=<%=pedido.getIdPedido()%>" >Atualizar</a>
+						<a href="logged.do?action=removerPedido&id=<%=pedido.getIdPedido()%>" >Remover</a>
 					</td>
 				</tr>
 			<%} %>

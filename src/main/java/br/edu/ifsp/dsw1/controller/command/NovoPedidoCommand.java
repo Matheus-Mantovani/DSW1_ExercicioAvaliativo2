@@ -34,7 +34,7 @@ public class NovoPedidoCommand implements Command {
 			request.setAttribute("mensagem", "<ERRO> Erro ao inserir pedido.");
 		}
 		
-		return "controller.do?action=novoPedidoForm";
+		return "logged.do?action=novoPedidoForm";
 	}
 
 }

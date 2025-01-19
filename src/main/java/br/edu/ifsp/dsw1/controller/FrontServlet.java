@@ -1,5 +1,10 @@
 package br.edu.ifsp.dsw1.controller;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import br.edu.ifsp.dsw1.controller.command.AtualizarPedidoCommand;
@@ -16,18 +21,13 @@ import br.edu.ifsp.dsw1.controller.command.LogoutCommand;
 import br.edu.ifsp.dsw1.controller.command.NovoPedidoCommand;
 import br.edu.ifsp.dsw1.controller.command.NovoPedidoFormCommand;
 import br.edu.ifsp.dsw1.controller.command.RemoverPedidoCommand;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/controller.do")
-public class ControllerServlet extends HttpServlet {
+@WebServlet("/front.do")
+public class FrontServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
 
-    public ControllerServlet() {
+    public FrontServlet() {
         super();
     }
 
@@ -40,26 +40,6 @@ public class ControllerServlet extends HttpServlet {
     		command = new LoginCommand();
     	} else if ("index".equals(action)) {
     		command = new IndexCommand();
-    	} else if("logged".equals(action)) {
-    		command = new LoggedCommand();
-    	} else if("cadastrarUsuario".equals(action)) {
-    		command = new CadastrarUsuarioCommand();
-    	} else if("novoPedido".equals(action)) {
-    		command = new NovoPedidoCommand();
-    	} else if("atualizarPedido".equals(action)) {
-    		command = new AtualizarPedidoCommand();
-    	} else if("gerenciarPedidos".equals(action)) {
-    		command = new GerenciarPedidosCommand();
-    	} else if("removerPedido".equals(action)) {
-    		command = new RemoverPedidoCommand();
-    	} else if("logout".equals(action)) {
-    		command = new LogoutCommand();
-    	} else if("cadastrarUsuarioForm".equals(action)) {
-    		command = new CadastrarUsuarioFormCommand();
-    	} else if("novoPedidoForm".equals(action)) {
-    		command = new NovoPedidoFormCommand();
-    	} else if("atualizarPedidoForm".equals(action)) {
-    		command = new AtualizarPedidoFormCommand();
     	} else {
     		command = new ErroCommand();
     	}
@@ -78,5 +58,4 @@ public class ControllerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
 	}
-
 }

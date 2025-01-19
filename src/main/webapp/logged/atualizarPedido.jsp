@@ -16,7 +16,7 @@
 
 	<jsp:include page="includes/navbar.jsp" /><br>
 	
-	<form action="controller.do?action=atualizarPedido&id=<%= pedido.getIdPedido() %>" method="post">
+	<form action="logged.do?action=atualizarPedido&id=<%= pedido.getIdPedido() %>" method="post">
 		<label for="nomeCliente">Nome do Cliente</label>
 		<input type="text" name="nomeCliente" id="nomeCliente" required placeholder="<%=pedido.getNomeCliente()%>"><br><br>
 		
