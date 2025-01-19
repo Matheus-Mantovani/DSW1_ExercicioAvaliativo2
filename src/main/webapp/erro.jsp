@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Pagina nao encontrada</title>
+<title>Pagina não encontrada</title>
 </head>
 <body>
 	<p>Página não encontrada</p>

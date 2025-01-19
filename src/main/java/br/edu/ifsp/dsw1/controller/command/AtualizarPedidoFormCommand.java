@@ -7,25 +7,19 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class RemoverPedidoCommand implements Command {
+public class AtualizarPedidoFormCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		var IDpedido = Integer.parseInt(request.getParameter("id"));
-		
 		var dao = new PedidosDaoFactory().factory();
+		var pedido = dao.findById(IDpedido);
 		
-		String mensagem;
-		if(dao.delete(IDpedido)) {
-			mensagem = "Pedido excluido!";
-		} else {
-			mensagem = "<ERRO> Não foi possível excluir o pedido.";
-		}
+		request.setAttribute("pedido", pedido);
 		
-		request.setAttribute("mensagem", mensagem);
-		
-		return "controller.do?action=gerenciarPedidos";
+		return "/logged/atualizarPedido.jsp";
 	}
 
 }

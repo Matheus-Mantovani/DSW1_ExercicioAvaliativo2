@@ -3,6 +3,7 @@ package br.edu.ifsp.dsw1.controller;
 import java.io.IOException;
 
 import br.edu.ifsp.dsw1.controller.command.AtualizarPedidoCommand;
+import br.edu.ifsp.dsw1.controller.command.AtualizarPedidoFormCommand;
 import br.edu.ifsp.dsw1.controller.command.CadastrarUsuarioCommand;
 import br.edu.ifsp.dsw1.controller.command.CadastrarUsuarioFormCommand;
 import br.edu.ifsp.dsw1.controller.command.Command;
@@ -57,6 +58,8 @@ public class ControllerServlet extends HttpServlet {
     		command = new CadastrarUsuarioFormCommand();
     	} else if("novoPedidoForm".equals(action)) {
     		command = new NovoPedidoFormCommand();
+    	} else if("atualizarPedidoForm".equals(action)) {
+    		command = new AtualizarPedidoFormCommand();
     	} else {
     		command = new ErroCommand();
     	}

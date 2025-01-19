@@ -12,6 +12,8 @@ public interface PedidosDao {
 	
 	List<Pedido> findByNomeCliente(String nomeCliente);
 	
+	List<Pedido> getAll();
+	
 	boolean update(Pedido updatedPedido, int idpedidos);
 	
 	boolean delete(int id);

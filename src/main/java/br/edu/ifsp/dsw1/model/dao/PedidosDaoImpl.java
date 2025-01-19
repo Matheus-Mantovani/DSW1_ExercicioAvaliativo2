@@ -17,8 +17,9 @@ public class PedidosDaoImpl implements PedidosDao{
 									+ ");";
 	private static final String INSERT = "INSERT INTO pedidos (idpedidos, nomeCliente, enderecoEntrega, valor, descricao)"
 									+ " VALUES (seq_id_pedidos.NEXTVAL, ?, ?, ?, ?)";
-	private static final String SELECT_BY_ID = "SELECT * FROM pedidos WHERE id = ?";
+	private static final String SELECT_BY_ID = "SELECT * FROM pedidos WHERE idpedidos = ?";
 	private static final String SELECT_BY_NOME_CLIENTE = "SELECT * FROM pedidos WHERE nomeCliente = ?";
+	private static final String SELECT_ALL = "SELECT * from pedidos";
 	private static final String UPDATE = "UPDATE pedidos "
 									+ "SET nomeCliente = ?, enderecoEntrega = ?, valor = ?, descricao = ? "
 									+ "WHERE idpedidos = ?";
@@ -39,7 +40,7 @@ public class PedidosDaoImpl implements PedidosDao{
 			rows = statement.executeUpdate();
 			
 		} catch (SQLException e) {
-			e.printStackTrace();;
+			e.printStackTrace();
 		}
 		
 		return rows > 0;
@@ -64,7 +65,7 @@ public class PedidosDaoImpl implements PedidosDao{
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();;
+			e.printStackTrace();
 		}
 		
 		return pedido;
@@ -89,7 +90,31 @@ public class PedidosDaoImpl implements PedidosDao{
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();;
+			e.printStackTrace();
+		}
+		
+		return pedidos;
+	}
+	
+	@Override
+	public List<Pedido> getAll() {
+		List<Pedido> pedidos = new ArrayList<>();
+		
+		try(var connection = DatabaseConnection.getConnection();
+				var statement = connection.prepareStatement(SELECT_ALL)) {
+			
+			var resultSet = statement.executeQuery();
+			
+			while(resultSet.next()) {
+				pedidos.add(new Pedido(resultSet.getInt("idpedidos"), 
+						resultSet.getString("nomeCliente"),
+						resultSet.getString("enderecoEntrega"), 
+						resultSet.getDouble("valor"), 
+						resultSet.getString("descricao")));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		
 		return pedidos;
@@ -111,7 +136,7 @@ public class PedidosDaoImpl implements PedidosDao{
 				rows = statement.executeUpdate();
 				
 			} catch (SQLException e) {
-				e.printStackTrace();;
+				e.printStackTrace();
 			}
 			return rows > 0;
 		}
@@ -130,7 +155,7 @@ public class PedidosDaoImpl implements PedidosDao{
 			rows = statement.executeUpdate();
 			
 		} catch (SQLException e) {
-			e.printStackTrace();;
+			e.printStackTrace();
 		}
 		
 		return rows > 0;
