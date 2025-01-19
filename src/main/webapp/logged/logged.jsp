@@ -13,6 +13,9 @@
 <title>Logado</title>
 </head>
 <body>
+
+	<jsp:include page="includes/navbar.jsp" />
+
 	<p>Bem vindo, <%= usuario.getLogin() %></p>
 </body>
 </html>

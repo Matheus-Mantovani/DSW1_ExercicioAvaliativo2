@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import br.edu.ifsp.dsw1.controller.command.Command;
 import br.edu.ifsp.dsw1.controller.command.IndexCommand;
+import br.edu.ifsp.dsw1.controller.command.LoggedCommand;
 import br.edu.ifsp.dsw1.controller.command.LoginCommand;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,6 +30,8 @@ public class ControllerServlet extends HttpServlet {
     		command = new LoginCommand();
     	} else if ("index".equals(action)) {
     		command = new IndexCommand();
+    	} else if("logged".equals(action)) {
+    		command = new LoggedCommand();
     	}
     	
     	String view = command.execute(request, response);
