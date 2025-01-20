@@ -22,7 +22,14 @@
 		<%=mensagem %>
 	<%} %>
 	
-	<%if(pedidos.size() > 0) {%>
+	<%if(pedidos != null && pedidos.size() > 0) {%>
+		<form action="logged.do?action=filtrarPorNome" method="post">
+			<label for="nomeCliente">Nome do Cliente</label>
+			<input type="text" name="nomeCliente" id="nomeCliente"><br><br>
+			
+			<button type="submit">Filtrar</button>
+		</form>
+	
 		<table>
 			<thead>
 				<tr>

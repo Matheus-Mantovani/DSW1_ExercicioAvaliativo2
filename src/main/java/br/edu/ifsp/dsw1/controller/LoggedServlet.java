@@ -13,6 +13,7 @@ import br.edu.ifsp.dsw1.controller.command.CadastrarUsuarioCommand;
 import br.edu.ifsp.dsw1.controller.command.CadastrarUsuarioFormCommand;
 import br.edu.ifsp.dsw1.controller.command.Command;
 import br.edu.ifsp.dsw1.controller.command.ErroCommand;
+import br.edu.ifsp.dsw1.controller.command.FiltrarPedidoClienteCommand;
 import br.edu.ifsp.dsw1.controller.command.GerenciarPedidosCommand;
 import br.edu.ifsp.dsw1.controller.command.IndexCommand;
 import br.edu.ifsp.dsw1.controller.command.LoggedCommand;
@@ -58,6 +59,8 @@ private static final long serialVersionUID = 1L;
     		command = new NovoPedidoFormCommand();
     	} else if("atualizarPedidoForm".equals(action)) {
     		command = new AtualizarPedidoFormCommand();
+    	} else if("filtrarPorNome".equals(action)) {
+    		command = new FiltrarPedidoClienteCommand();
     	} else {
     		command = new ErroCommand();
     	}
